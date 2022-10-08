@@ -108,10 +108,10 @@ const Home: NextPage = ({
           />
           <section className="col-md-12 hero-absolute">
             <h1 className="text-white text-center">
-              {welcomeSection.welcomeText}
+              {welcomeSection?.welcomeText}
             </h1>
             <p className="text-white text-center f-17 py-3">
-              {welcomeSection.quoteText}
+              {welcomeSection?.quoteText}
             </p>
             <button className="btn btn-primary-custom d-flex mx-auto hover-border-5">
               Order Online

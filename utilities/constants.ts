@@ -1,1 +1,1 @@
-export const BASE_URL = "http://localhost:1377";
+export const BASE_URL = "https://strapigurkha.herokuapp.com";
