@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://strapigurkha.herokuapp.com/api/",
+  baseURL: "http://18.168.132.48/api/",
   timeout: 1000,
   headers: {
     accepts: "application/json",

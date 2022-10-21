@@ -18,6 +18,7 @@ const Home: NextPage = ({
   quoteSection,
   gallerySection,
 }: any) => {
+  console.log(welcomeSection.welcomeImage);
   const settings = {
     dots: true,
     infinite: true,
@@ -36,7 +37,7 @@ const Home: NextPage = ({
               <img
                 src={
                   process.env.PUBLIC_BASE_URL +
-                  `${welcomeSection?.welcomeImage?.data.attributes.formats.large.url}`
+                  `${welcomeSection?.welcomeImage?.data.attributes?.url}`
                 }
                 alt=""
                 width="40px"
@@ -101,7 +102,7 @@ const Home: NextPage = ({
           <img
             src={
               process.env.PUBLIC_BASE_URL +
-              `${welcomeSection?.welcomeImage?.data.attributes.formats.large.url}`
+              `${welcomeSection?.welcomeImage?.data.attributes?.url}`
             }
             alt=""
             className="hero-bg"
@@ -169,7 +170,7 @@ const Home: NextPage = ({
                   <img
                     src={
                       process.env.PUBLIC_BASE_URL +
-                      `${cuisine.cuisineImage.data.attributes.formats.small.url}`
+                      `${cuisine?.cuisineImage?.data?.attributes?.formats?.small?.url}`
                     }
                     alt=""
                     className="img-fluid"
@@ -177,7 +178,7 @@ const Home: NextPage = ({
                   <div className="blurry-bg position-absolute">
                     <div className="p-3">
                       <h4 className="arrow white-text">
-                        {cuisine.cousineType}
+                        {cuisine?.cousineType}
                       </h4>
                     </div>
                   </div>

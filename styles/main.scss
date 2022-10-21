@@ -359,6 +359,9 @@ hr {
 
 .bg-hero .hero-bg {
   padding: 0px !important;
+  height: 97vh;
+  object-fit: cover;
+  filter: brightness(0.5);
 }
 
 .row {
