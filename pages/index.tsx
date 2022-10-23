@@ -9,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { BASE_URL } from "../utilities/constants";
 
 const Home: NextPage = ({
   welcomeSection,
@@ -18,7 +19,6 @@ const Home: NextPage = ({
   quoteSection,
   gallerySection,
 }: any) => {
-  console.log(welcomeSection.welcomeImage);
   const settings = {
     dots: true,
     infinite: true,
@@ -28,6 +28,8 @@ const Home: NextPage = ({
     prevArrow: <FontAwesomeIcon icon={faEnvelope} />,
     nextArrow: <FontAwesomeIcon icon={faEnvelope} />,
   };
+
+  console.log(BASE_URL, "hello123");
   return (
     <>
       <section className="container-fluid px-0">
@@ -36,7 +38,7 @@ const Home: NextPage = ({
             <a className="navbar-brand" href="#">
               <img
                 src={
-                  process.env.PUBLIC_BASE_URL +
+                  BASE_URL +
                   `${welcomeSection?.welcomeImage?.data.attributes?.url}`
                 }
                 alt=""
@@ -101,8 +103,7 @@ const Home: NextPage = ({
         <section className="row position-relative mb-md-5 mb-0 bg-hero">
           <img
             src={
-              process.env.PUBLIC_BASE_URL +
-              `${welcomeSection?.welcomeImage?.data.attributes?.url}`
+              BASE_URL + `${welcomeSection?.welcomeImage?.data.attributes?.url}`
             }
             alt=""
             className="hero-bg"
@@ -136,7 +137,7 @@ const Home: NextPage = ({
           <section className="col-md-4 mt-md-5 mt-4 mb-3 mb-md-0">
             <img
               src={
-                process.env.PUBLIC_BASE_URL +
+                BASE_URL +
                 aboutSection?.aboutImageText[0]?.aboutTitleImage?.data
                   ?.attributes?.formats?.medium?.url
               }
@@ -152,7 +153,7 @@ const Home: NextPage = ({
             </div>
             <img
               src={
-                process.env.PUBLIC_BASE_URL +
+                BASE_URL +
                 aboutSection?.aboutImageText[1]?.aboutTitleImage?.data
                   ?.attributes?.formats?.small?.url
               }
@@ -169,7 +170,7 @@ const Home: NextPage = ({
                 <section className="position-relative">
                   <img
                     src={
-                      process.env.PUBLIC_BASE_URL +
+                      BASE_URL +
                       `${cuisine?.cuisineImage?.data?.attributes?.formats?.small?.url}`
                     }
                     alt=""
@@ -193,12 +194,7 @@ const Home: NextPage = ({
               {diningSection?.allImages?.data.map((dining: any) => {
                 return (
                   <div key={dining.id} className="image">
-                    <img
-                      src={
-                        process.env.PUBLIC_BASE_URL + dining?.attributes?.url
-                      }
-                      alt=""
-                    />
+                    <img src={BASE_URL + dining?.attributes?.url} alt="" />
                   </div>
                 );
               })}
@@ -241,12 +237,7 @@ const Home: NextPage = ({
                   {gallerySection?.allImages?.data?.map((image: any) => {
                     return (
                       <div key={image.id} className="slider-image px-2">
-                        <img
-                          src={
-                            process.env.PUBLIC_BASE_URL + image?.attributes?.url
-                          }
-                          alt=""
-                        />
+                        <img src={BASE_URL + image?.attributes?.url} alt="" />
                       </div>
                     );
                   })}
